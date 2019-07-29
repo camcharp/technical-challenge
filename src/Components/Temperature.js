@@ -27,7 +27,7 @@ export default class Temperature extends Component {
 			<div className="temp-input">
 				<h1>Temperature</h1>
 				<input type="number" placeholder="Temperature in °C" onInput={this.handleInput} onChange={this.updateText} />
-				<p  style={colorStyle}>{this.state.text}</p>
+				<p style={colorStyle}>{this.state.text}</p>
 			</div>
 		);
 	}
