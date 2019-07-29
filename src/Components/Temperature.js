@@ -14,23 +14,20 @@ export default class Temperature extends Component {
 	};
 
 	updateText = () => {
-		if (this.state.temperature <= 10) this.setState({ text: "It's cold ❄️" });
-		else if (this.state.temperature > 10 && this.state.temperature <= 30) this.setState({ text: "It's nice 🌼" });
-		else if (this.state.temperature > 30) this.setState({ text: "It's warm ☀️" });
+		if (this.state.temperature <= 10) this.setState({ text: "It's cold ❄️", color: "blue" });
+		else if (this.state.temperature > 10 && this.state.temperature <= 30) this.setState({ text: "It's nice 🌼",color: "black" });
+		else if (this.state.temperature > 30) this.setState({ text: "It's warm ☀️",color: "red" });
     };
-
-    color () {
-        if (this.state.temperature <= 10) this.setState({ color: "blue" });
-        else if (this.state.temperature > 10 && this.state.temperature <= 30) this.setState({ color: "black" });
-		else if (this.state.temperature > 30) this.setState({ color: "red" });
-    }
     
 	render() {
+        var colorStyle = {
+			color: `${this.state.color}`,
+		};
 		return (
 			<div className="temp-input">
 				<h1>Temperature</h1>
 				<input type="number" placeholder="Temperature in °C" onInput={this.handleInput} onChange={this.updateText} />
-				<p  style={(this.state.color) ? this.state.color : {}}>{this.state.text}</p>
+				<p  style={colorStyle}>{this.state.text}</p>
 			</div>
 		);
 	}
