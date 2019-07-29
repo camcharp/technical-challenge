@@ -20,7 +20,7 @@ export default class CustomizeImage extends Component {
 			height: `${this.state.size}px`
 		};
 		return (
-			<div className="customize">
+			<div className="container">
 				<h1>Customize Image</h1>
 				<input type="text" placeholder="/favicon.ico" onInput={this.handleUrl} />
 				<input type="range" min="O" max="200" onInput={this.handleInput} />
